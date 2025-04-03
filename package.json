@@ -58,7 +58,6 @@
     "@hono/vite-build": "^1.5.0",
     "@tailwindcss/vite": "^4.1.1",
     "@vitejs/plugin-react": "^4.3.4",
-    "glob": "^11.0.1",
     "vite-plugin-ssr-hot-reload": "^0.4.1"
   },
   "engines": {
