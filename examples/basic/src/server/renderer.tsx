@@ -1,5 +1,5 @@
 import { reactRenderer } from '@hono/react-renderer'
-import { Script, Link } from 'hono-vite-react-stack/components'
+import { Script, Link } from '../../../../src/components'
 
 export const renderer = reactRenderer(({ children }) => {
   return (

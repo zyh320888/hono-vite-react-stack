@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "test": "npm run test:e2e -w basic",
     "build": "tsup",
     "watch": "tsup --watch",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
@@ -16,7 +17,7 @@
     "dist"
   ],
   "workspaces": [
-    "/",
+    "./",
     "./examples/basic"
   ],
   "exports": {

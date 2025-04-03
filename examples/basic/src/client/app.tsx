@@ -7,7 +7,7 @@ const fetchData = async () => {
 
 const Component = ({ promise }: { promise: Promise<{ message: string }> }) => {
   const data = use(promise)
-  return <h2>{data.message}</h2>
+  return <h2 className='text-2xl'>{data.message}</h2>
 }
 
 const App = () => {
