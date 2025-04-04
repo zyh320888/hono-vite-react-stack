@@ -112,8 +112,8 @@ Commands:
 ```json
 "dev": "vite",
 "build": "vite build && vite build --ssr",
-"preview": "wrangler dev dist/index.js",
-"deploy": "$npm_execpath run build && wrangler deploy dist/index.js",
+"preview": "wrangler dev dist-server/index.js",
+"deploy": "$npm_execpath run build && wrangler deploy dist-server/index.js",
 ```
 
 ## Author
