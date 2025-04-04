@@ -8,6 +8,12 @@
 - **Cloudflare Workers** - You can deploy your application to Cloudflare Workers. It also emulates the Cloudflare Workers environment during development, just like Wrangler.
 - **Vite** - Used for the development server and build. By using this plugin, you can easily develop using this stack and build the server side and client side.
 
+## Try it out
+
+```bash
+npx giget@latest gh:yusukebe/hono-vite-react-stack-example my-app
+```
+
 ## Usage
 
 Configuration file:
@@ -115,6 +121,8 @@ Commands:
 "preview": "wrangler dev dist-server/index.js",
 "deploy": "$npm_execpath run build && wrangler deploy dist-server/index.js",
 ```
+
+See more: https://github.com/yusukebe/hono-vite-react-stack-example
 
 ## Author
 
