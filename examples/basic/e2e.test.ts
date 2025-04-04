@@ -61,3 +61,27 @@ test('Should apply Tailwind text-2xl style to <h2>', async ({ page }) => {
 
   expect(fontSize).toBe('24px')
 })
+
+test('Should include react-refresh script tag', async ({ page }) => {
+  await page.goto('/')
+
+  const scriptTag = page.locator('script[type="module"][src="/@react-refresh"]')
+  await expect(scriptTag).toHaveCount(1)
+})
+
+test('Should contain import statement for react-refresh in inline scripts', async ({ page }) => {
+  await page.goto('/')
+
+  const moduleScripts = await page.locator('script[type="module"]').all()
+
+  let found = false
+
+  for (const script of moduleScripts) {
+    const content = await script.textContent()
+    if (content?.includes(`import RefreshRuntime from '/@react-refresh'`)) {
+      found = true
+      break
+    }
+  }
+  expect(found).toBe(true)
+})
