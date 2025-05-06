@@ -119,7 +119,30 @@ export default defineConfig({
 
 ### Durable Objects
 
-Building a project using DurableObjects requires some additional steps. If you have exported a DurableObjects class named `MyDurableObject` from `./src/server/do.ts`, write `vite.config.ts` as follows. This is a bit of a hack.
+Creating a project using Durable Objects requires some additional steps. If you have defined a Durable Object class named `MyDurableObject` and exported it in `src/server/do.ts`:
+
+```ts
+// src/server/do.ts
+import { DurableObject } from 'cloudflare:workers'
+
+export class MyDurableObject extends DurableObject<Bindings> {
+  constructor(ctx: DurableObjectState, env: Bindings) {
+    super(ctx, env)
+  }
+  async sayHello(name: string): Promise<string> {
+    return `Hello, ${name}!`
+  }
+}
+```
+
+You should import and export it at `src/server/index.tsx`.
+
+```tsx
+// src/server/index.tsx
+export { MyDurableObject } from './do'
+```
+
+And write `vite.config.ts` as follows. This is a bit of a hack.
 
 ```ts
 // vite.config.ts
