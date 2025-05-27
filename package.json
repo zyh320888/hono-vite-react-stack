@@ -1,6 +1,6 @@
 {
   "name": "hono-vite-react-stack-node",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "scripts": {
     "test": "bun --filter=\"basic\" test:e2e",

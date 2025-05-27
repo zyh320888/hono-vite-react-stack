@@ -13,7 +13,10 @@ interface Config {
   buildPluginOptions?: NodeBuildOptions
   clientEntry?: string
   cssEntry?: string
-  serverDirectories?: string[]
+  serverDirectories?: string[],
+  port?: number,
+  minify?: boolean
+
 }
 
 const defaultConfig: Required<Config> = {
@@ -23,6 +26,8 @@ const defaultConfig: Required<Config> = {
   clientEntry: 'src/client/index.tsx',
   cssEntry: 'src/style.css',
   serverDirectories: ['src/server/*'],
+  port: 3000,
+  minify: true
 }
 
 export function reactStack(config: Config = {}): PluginOption[] {
@@ -62,6 +67,8 @@ export function reactStack(config: Config = {}): PluginOption[] {
   // }
 
   const buildPlugin = build({
+    minify: resolvedConfig.minify,
+    port: resolvedConfig.port,
     entry: resolvedConfig.serverEntry,
     outputDir: resolvedConfig.buildOutputDir,
   })
