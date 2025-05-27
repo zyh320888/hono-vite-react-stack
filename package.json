@@ -58,6 +58,7 @@
   "dependencies": {
     "@cloudflare/vite-plugin": "^0.1.20",
     "@hono/vite-build": "^1.6.1",
+    "@hono/vite-dev-server": "^0.19.1",
     "@tailwindcss/vite": "^4.1.1",
     "@vitejs/plugin-react": "^4.3.4",
     "vite-plugin-ssr-hot-reload": "^0.4.1"

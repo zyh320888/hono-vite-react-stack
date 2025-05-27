@@ -7,7 +7,7 @@ type Options = { manifest?: Manifest; prod?: boolean } & JSX.IntrinsicElements['
 export const Link: FC<Options> = (options) => {
   let { href, prod, manifest, ...rest } = options
   if (href) {
-    if (prod ?? import.meta.env.PROD) {
+    if (prod ?? import.meta.env?.PROD) {
       if (!manifest) {
         const MANIFEST = import.meta.glob<{ default: Manifest }>('/dist/.vite/manifest.json', {
           eager: true,

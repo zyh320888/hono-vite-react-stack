@@ -12,7 +12,7 @@ type Options = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Script = (options: Options): any => {
   const src = options.src ?? '/src/client/index.tsx'
-  if (options.prod ?? import.meta.env.PROD) {
+  if (options.prod ?? import.meta.env?.PROD) {
     let manifest: Manifest | undefined = options.manifest
     if (!manifest) {
       const MANIFEST = import.meta.glob<{ default: Manifest }>('/dist/.vite/manifest.json', {
